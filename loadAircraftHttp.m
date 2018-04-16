@@ -10,15 +10,15 @@ function [ aircraft ] = loadAircraftHttp( scenario, timestamp, varargin )
             port = varargin(1);
             
             url = strcat('http://localhost:', port, '/spotbeam?timestamp=',num2str(timestamp), '&db=skyhigh-spotbeam-pos_rural_200');
+            url = strjoin(url, '');
         else
             url = strcat('http://orion6:3000/spotbeam?timestamp=',num2str(timestamp), '&db=skyhigh-spotbeam-pos_rural_200');
         end
-        url = strjoin(url, '');
         aircraft = webread(url);
    catch
-        str = strcat('Data could not be loaded. Check if file exist.');
-        error(str);
-    end
+        %str = strcat('Data could not be loaded. Check if file exist.');
+        error('Something went wrong, are you connected to orion6?');
+   end
 
 
 end

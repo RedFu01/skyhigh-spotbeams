@@ -2,16 +2,20 @@
 
 clear all;
 close all;
-startTime = 1396389610 + 1 * 60 * 60;
-deltaT = 10;
-endTime = 1396389610 + 23 * 60 * 60;
+startTime = 1391295610 + 1 * 60 * 60;
+deltaT = 60;
+endTime = 1391295610 + 2 * 60 * 60;
+
+% data is available from 1391295610 (02-04-2014) to 1392245610 (12-04-2014)
 
 scenario = 'rural';
 
 ac_count = [];
 
 for t=startTime:deltaT:endTime
-    ac_list = loadAircraft(scenario, t);
+    % specify the scenario, the timestamp and the port of your local
+    % machine tunneld to port 3000 of orion6 (omit if you're in the same network as orion6)
+    ac_list = loadAircraftHttp(scenario, t, '3000');
     ac_count(end+1) = length(ac_list);
 end
 

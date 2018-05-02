@@ -1,4 +1,4 @@
-function [ aircraft ] = loadAircraftHttp( scenario, timestamp, varargin )
+function [ aircraft ] = loadFullAircraftDataHttp( scenario, timestamp, varargin )
 %LOADAIRCRAFTHTTP Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -9,10 +9,10 @@ function [ aircraft ] = loadAircraftHttp( scenario, timestamp, varargin )
         if(length(varargin) > 0)
             port = varargin(1);
             
-            url = strcat('http://localhost:', port, '/spotbeam?timestamp=',num2str(timestamp), '&db=skyhigh-spotbeam-pos_rural_150');
+            url = strcat('http://localhost:', port, '/spotbeam/full?timestamp=',num2str(timestamp), '&db=skyhigh-spotbeam-pos_rural_150');
             url = strjoin(url, '');
         else
-            url = strcat('http://orion6:3000/spotbeam?timestamp=',num2str(timestamp), '&db=skyhigh-spotbeam-pos_rural_150');
+            url = strcat('http://orion6:3000/spotbeam/full?timestamp=',num2str(timestamp), '&db=skyhigh-spotbeam-pos_rural_150');
         end
         aircraft = webread(url);
    catch

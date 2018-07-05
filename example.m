@@ -2,13 +2,13 @@
 
 clear all;
 close all;
-startTime = 1391295610 + 1 * 60 * 60;
+startTime = 1391212720 + 0 * 60 * 60;
 deltaT = 60;
-endTime = 1391295610 + 2 * 60 * 60;
+endTime = 1391212720 + 1 * 60 * 60;
 
 % data is available from 1391295610 (02-04-2014) to 1392245610 (12-04-2014)
 
-scenario = 'rural';
+scenario = 'urban';
 
 ac_count = [];
 

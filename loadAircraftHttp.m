@@ -8,8 +8,10 @@ function [ aircraft ] = loadAircraftHttp( scenario, timestamp, varargin )
     try
         if(scenario == 'rural')
             db = 'skyhigh-spotbeam-pos_rural_150';
-        else
+        elseif(scenario == 'urban')
             db = 'skyhigh-spotbeam-pos_urban_150';
+        else
+            db = 'skyhigh-spotbeam-pos_inter_150';   
         end
         if(length(varargin) > 0)
             port = varargin(1);

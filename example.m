@@ -3,8 +3,8 @@
 clear all;
 close all;
 startTime = 1391212720 + 0 * 60 * 60;
-deltaT = 60;
-endTime = 1391212720 + 1 * 60 * 60;
+deltaT = 60*10;
+endTime = 1391212720 + 20 * 60 * 60;
 
 % data is available from 1391295610 (02-04-2014) to 1392245610 (12-04-2014)
 % for rural
@@ -12,7 +12,10 @@ endTime = 1391212720 + 1 * 60 * 60;
 % data is available from 1391212720 (02-04-2014) 
 % for urban
 
-scenario = 'urban';
+% data is available from 1391212720 (02-04-2014) 
+% for inter
+
+scenario = 'inter';
 
 ac_count = [];
 

@@ -14,7 +14,7 @@ function [ aircraft ] = loadFullAircraftDataHttp( scenario, timestamp, varargin 
             db = 'skyhigh-spotbeam-pos_fra_150';
         else
             db = 'skyhigh-spotbeam-pos_inter_150';   
-                end
+        end
         
         if(length(varargin) > 0)
             port = varargin(1);

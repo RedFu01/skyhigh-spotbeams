@@ -6,14 +6,16 @@ function [ aircraft ] = loadFullAircraftDataHttp( scenario, timestamp, varargin 
     %     error('At the moment only rural scenario is supported');
     %end
     try
-        if(scenario == 'rural')
+        if strcmp(scenario, 'rural')
             db = 'skyhigh-spotbeam-pos_rural_150';
-        elseif(scenario == 'rural')
+        elseif strcmp(scenario, 'urban') 
             db = 'skyhigh-spotbeam-pos_urban_150';
+        elseif strcmp(scenario, 'frankfurt')
+            db = 'skyhigh-spotbeam-pos_fra_150';
         else
-            db = 'skyhigh-spotbeam-pos_inter_150';    
-        end
-        disp(db)
+            db = 'skyhigh-spotbeam-pos_inter_150';   
+                end
+        
         if(length(varargin) > 0)
             port = varargin(1);
             

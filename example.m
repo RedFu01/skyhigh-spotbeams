@@ -15,7 +15,7 @@ endTime = 1391212720 + 20 * 60 * 60;
 % data is available from 1391212720 (02-04-2014) 
 % for inter
 
-scenario = 'inter';
+scenario = 'frankfurt';
 
 ac_count = [];
 
